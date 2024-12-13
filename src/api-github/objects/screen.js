@@ -6,6 +6,8 @@ const screen = {//o que coloca o novo html na tela
                             <div class ="data">
                                 <h1>${user.name ?? 'Não possui nome cadastrado 🥲'}</h1>
                                 <p>${user.bio ?? 'Não possui bio cadastrado 🥲'}</p>
+                                <p> Followers: ${user.followers}</p>
+                                <p> Following: ${user.following}</p>
                             </div>
                          </div>`
 
@@ -17,7 +19,8 @@ const screen = {//o que coloca o novo html na tela
                                                 <h2>Repositórios</h2>
                                                 <ul>${repositoriesItens}</ul>
                                             </div>`
-        }
+                                        }
+        
     },
     renderNotFound() {
         this.userProfile.innerHTML = "<h3>Usuário não encontrado</h3> ";
@@ -25,3 +28,4 @@ const screen = {//o que coloca o novo html na tela
 }
 
 export { screen }
+
