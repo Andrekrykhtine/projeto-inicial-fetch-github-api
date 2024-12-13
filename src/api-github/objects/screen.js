@@ -20,6 +20,27 @@ const screen = {//o que coloca o novo html na tela
                                                 <ul>${repositoriesItens}</ul>
                                             </div>`
                                         }
+        let eventsItens = ""; // Inicializa o HTML dos itens de eventos
+         // Filtra os eventos desejados (CreateEvent e PushEvent)
+        user.events.forEach(event => {
+                                    if (event.type === "CreateEvent" || event.type === "PushEvent") {
+                                    let commitMessage = "Sem mensagem de commit";
+                                    const eventsType = event.type;
+                                
+                                    // Obtém a mensagem do commit, se disponível
+                                    if (event.payload && event.payload.commits && event.payload.commits.length > 0) {
+                                    commitMessage = event.payload.commits[0].message;
+                                                }
+                                
+                                    // Adiciona o evento ao HTML
+                                    eventsItens += `<li>${eventsType} - ${commitMessage}</li>`;
+                                            }
+                                        });
+        this.userProfile.innerHTML +=  `<div class="repositories section">
+                                            <h2>Eventos</h2>
+                                            <ul>${eventsItens}</ul>
+                                        </div>`;
+                                        
         
     },
     renderNotFound() {
