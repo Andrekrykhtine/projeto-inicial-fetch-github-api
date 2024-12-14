@@ -8,8 +8,7 @@ import { screen } from './objects/screen.js'
 document.getElementById('btn-search').addEventListener('click', () => {
     const userName = document.getElementById("input-search").value
     if (validateEmptyInput(userName)) return
-    getUserData(userName)
-  
+    getUserData(userName) 
 });
 
 document.getElementById('input-search').addEventListener('keyup', (e) => {
@@ -38,6 +37,8 @@ function validateEmptyInput(userName) {
 async function getUserData(userName) {
 
     const userResponse = await getUser(userName);
+   
+   
     
     if (userResponse.message === "Not Found") {
         screen.renderNotFound()
@@ -46,11 +47,14 @@ async function getUserData(userName) {
 
     const repositoriesResponse = await getRepositories(userName)
     const eventsResponse = await getEvents(userName)
+    
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)
     user.setEvents(eventsResponse)
+   
 
-    screen.renderUser(user)
+        screen.renderUser(user)
+ 
 }
 
 

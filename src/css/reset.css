@@ -6,10 +6,10 @@
 
 a{
     text-decoration: none;
-    color: var(--cor-branca);
+   
 }
 
-ul{
+ul,li{
     list-style: none;
 }
 

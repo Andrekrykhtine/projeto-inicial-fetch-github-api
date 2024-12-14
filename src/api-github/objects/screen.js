@@ -6,13 +6,15 @@ const screen = {//o que coloca o novo html na tela
                             <div class ="data">
                                 <h1>${user.name ?? 'Não possui nome cadastrado 🥲'}</h1>
                                 <p>${user.bio ?? 'Não possui bio cadastrado 🥲'}</p>
-                                <p> Followers: ${user.followers}</p>
-                                <p> Following: ${user.following}</p>
+                                <p>👥 Followers: ${user.followers}</p>
+                                <p>👥 Following: ${user.following}</p>
                             </div>
                          </div>`
 
         let repositoriesItens = ''
-        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`);
+        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}" target="_blank"><span class="repo_name">${repo.name}</span> <div> <span class="repo_count">🍴${repo.forks_count}</span> <span class="repo_count">⭐${repo.stargazers_count}</span> <span class="repo_count">👀${repo.watchers_count}</span> <span class="repo_count">🧑🏿‍💻${repo.language}</span></div> </a></li>`);
+        console.log(repositoriesItens);
+        
 
         if (user.repositories.length > 0) {//verificação  se tem repositorio.
             this.userProfile.innerHTML += `<div class="repositories section ">
@@ -20,6 +22,7 @@ const screen = {//o que coloca o novo html na tela
                                                 <ul>${repositoriesItens}</ul>
                                             </div>`
                                         }
+                                        console.log(repositoriesItens);
         let eventsItens = ""; // Inicializa o HTML dos itens de eventos
          // Filtra os eventos desejados (CreateEvent e PushEvent)
         user.events.forEach(event => {
@@ -36,8 +39,9 @@ const screen = {//o que coloca o novo html na tela
                                     eventsItens += `<li>${eventsType} - ${commitMessage}</li>`;
                                             }
                                         });
-        this.userProfile.innerHTML +=  `<div class="repositories section">
+        this.userProfile.innerHTML +=  `<div class="events">
                                             <h2>Eventos</h2>
+                                            <div class="event_itens"
                                             <ul>${eventsItens}</ul>
                                         </div>`;
                                         
