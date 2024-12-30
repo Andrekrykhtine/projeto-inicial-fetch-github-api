@@ -86,7 +86,7 @@
     <p>Responsável por renderizar os dados do usuário e lidar com a interface do usuário.</p>
   <h2 id="captura-tela">🖼️ Captura de Tela</h2>
     <p>Abaixo está uma captura de tela da aplicação em execução:</p>
-    <img src="assets/screenshot.png" alt="Captura de Tela do Projeto" style="max-width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+    <img src="src/imagens/Api-git-hub.gif" alt="Captura de Tela do Projeto" style="max-width: 100%; border: 1px solid #ccc; border-radius: 5px;">
 <h2>💡 Melhorias Futuras</h2>
     <ul>
         <li>Paginação para exibir mais repositórios e eventos.</li>
