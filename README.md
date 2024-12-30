@@ -1,7 +1,3 @@
-
-
-
-
 <h1>GitHub API User Finder</h1>
 <p>Um projeto que utiliza a API do GitHub para buscar informações de usuários, seus repositórios e eventos, renderizando-os de maneira visual e interativa.</p>
  <h2>📑 Índice</h2>
